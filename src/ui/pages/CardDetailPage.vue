@@ -1,11 +1,13 @@
 <template>
-    <h1></h1>
+    <h1>poop</h1>
 </template>
 
 <script>
 export default {
-    name: 'CardDetailPage'
-    
+    name: 'CardDetailPage',
+    props: {
+        card: Object
+    }
 }
 </script>
 

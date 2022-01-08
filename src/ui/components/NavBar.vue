@@ -21,7 +21,7 @@
             </div>
             <div class="hidden sm:block sm:ml-6">
             <div class="flex space-x-4 mt-1.5">
-                <a href="#" class="bg-gray-500 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Search</a>
+                <router-link :to="{ name: 'searchPage' }" class="bg-gray-500 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Search</router-link>
             </div>
             </div>
         </div>
