@@ -1,52 +1,51 @@
 <template>
-  <div class="m-auto max-w-7xl px-5 mb-10 flex flex-col min-h-screen">
-      <SearchBar/>
-      <div class="grid grid-flow-row-dense grid-cols-4 grid-rows-1 gap-4">
-        <DropDownMenu title="Select Card Type" v-bind:options="cardTypes"/>
-        <DropDownMenu title="Select Energy Type" v-bind:options="energyTypes"/>
-        <DropDownMenu title="Select Variant" v-bind:options="variants"/>
-        <DropDownMenu title="Select Pack" v-bind:options="packs"/>
+    <div class="flex">
+      <FilterMenu ref="filterMenu" v-bind:filterOptions="filterOptions"/>
+      <div class="m-auto max-w-7xl px-5 mb-10 flex flex-col min-h-screen">
+        <div class="flex">
+          <button v-on:click="toggleFilterMenu()" class="mt-10 mr-5 bg-gray-500 rounded-md text-white font-medium py-2 px-4 right">Filters</button>
+          <SearchBar class="grow"/>
+        </div>
+        <NoResults v-show="searchResults.length == 0"/>
+        <CardGrid v-bind:cards="searchResults"/>
       </div>
-      <NoResults v-show="searchResults.length == 0"/>
-      <CardGrid v-bind:cards="searchResults"/>
-  </div>
+    </div>
 </template>
 
 <script>
 // Repositories
 import searchRepository from '../../data/repository/SearchRepository.js'
-import filterOptionsRepository from '../../data/repository/FilterOptionsRepository.js'
 
 // Components
-import DropDownMenu from '../components/DropDownMenu.vue'
 import SearchBar from '../components/SearchBar.vue'
 import CardGrid from '../components/CardGrid.vue' 
 import NoResults from '../components/NoResults.vue'
+import FilterMenu from '../components/FilterMenu.vue'
 
 export default {
   name: 'SearchPage',
   components: {
-    DropDownMenu,
     SearchBar,
     CardGrid,
-    NoResults
+    NoResults,
+    FilterMenu
   },
   data () {
-        return {
-            cardTypes: [],
-            energyTypes: [],
-            variants: [],
-            packs: [],
-            searchResults: []
-        }
-    },
-    mounted: function () {
-      this.cardTypes = filterOptionsRepository.getCardTypeOptions()
-      this.energyTypes = filterOptionsRepository.getEnergyTypeOptions()
-      this.variants = filterOptionsRepository.getVariantOptions()
-      this.packs = filterOptionsRepository.getPackOptions()
-      this.searchResults = searchRepository.search()
+    return {
+        searchResults: []
     }
+  },
+  inject: ['filterOptions'],
+  methods: {
+    toggleFilterMenu
+  },
+  mounted: function () {
+    this.searchResults = searchRepository.search()
+  }
+}
+
+function toggleFilterMenu() {
+  this.$refs.filterMenu.open()
 }
 </script>
 

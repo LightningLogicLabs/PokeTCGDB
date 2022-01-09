@@ -1,5 +1,5 @@
 <template>
-  <nav class="bg-gray-800 sticky top-0 z-50">
+  <nav class="bg-gray-800 sticky top-0 z-10">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -36,7 +36,7 @@
                 <div>
                     <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" alt="">
+                    <img class="h-8 w-8 rounded-full" src="{{ user.profileImage }}" alt="">
                     </button>
                 </div>
             </div>
@@ -53,7 +53,8 @@
 
 <script>
 export default {
-    name: 'NavBar'
+    name: 'NavBar',
+    inject: ['user']
 }
 </script>
 

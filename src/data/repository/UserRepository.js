@@ -6,8 +6,9 @@ class UserRepository {
 
     getUser() {
         return {
-            id: "GN8239-nVsn848-1289nQu",
-            userName: "sir_ramen"
+            id: "82cb8883-2482-4ede-af09-5226368bbe39",
+            userName: "sir_ramen",
+            profileImage: "https://www.w3schools.com/howto/img_avatar.png"
         }
     }
 }

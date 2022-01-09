@@ -10,15 +10,27 @@ class SearchRepository {
         return [
             new Card(
                 "1c7a1783-c0ec-44a2-a577-d5ce15e7c12a",
-                "https://tcg.pokemon.com/assets/img/expansions/fusion-strike/cards/en-us/SWSH08_EN_210-2x.jpg"
+                "https://tcg.pokemon.com/assets/img/expansions/fusion-strike/cards/en-us/SWSH08_EN_210-2x.jpg",
+                "Basic",
+                "Skitty",
+                "60",
+                "Colorless"
             ), 
             new Card(
                 "21bbc260-130f-4d40-aeb2-c58a5c37ff96",
-                "https://tcg.pokemon.com/assets/img/expansions/fusion-strike/cards/en-us/SWSH08_EN_206-2x.jpg"
+                "https://tcg.pokemon.com/assets/img/expansions/fusion-strike/cards/en-us/SWSH08_EN_206-2x.jpg",
+                "Basic",
+                "Snorlax",
+                "160",
+                "Colorless"
             ),
             new Card(
                 "c37fccf5-21d2-4bcb-84c8-10267acfbe28",
-                "https://tcg.pokemon.com/assets/img/expansions/fusion-strike/cards/en-us/SWSH08_EN_242-2x.jpg"
+                "https://tcg.pokemon.com/assets/img/expansions/fusion-strike/cards/en-us/SWSH08_EN_242-2x.jpg",
+                "Trainer",
+                "Skaters' Park",
+                "",
+                "Stadium"
             ),
             new Card(
                 "758c1682-0b2e-4bc7-85c7-9e62462c6a5a",
@@ -52,9 +64,18 @@ class SearchRepository {
                 "709f732e-5088-406e-bc5b-1faf11d1b155",
                 "https://i0.wp.com/pkmncards.com/wp-content/uploads/en_US-Promo_SWSH-SWSH183-jolteon_v.jpeg?fit=734%2C1024&ssl=1"
             ),
-            new Card("https://tcg.pokemon.com/assets/img/expansions/evolving-skies/cards/en-us/SWSH07_EN_196-2x.jpg"),
-            new Card("https://tcg.pokemon.com/assets/img/expansions/fusion-strike/cards/en-us/SWSH08_EN_255-2x.jpg"),
-            new Card("https://tcg.pokemon.com/assets/img/expansions/fusion-strike/cards/en-us/SWSH08_EN_251-2x.jpg"),
+            new Card(
+                "709f732e-5088-506b-ac5b-1faf11d1b155",
+                "https://tcg.pokemon.com/assets/img/expansions/evolving-skies/cards/en-us/SWSH07_EN_196-2x.jpg"
+            ),
+            new Card(
+                "789f732e-5088-406e-fc5f-1faf11d1b155",
+                "https://tcg.pokemon.com/assets/img/expansions/fusion-strike/cards/en-us/SWSH08_EN_255-2x.jpg"
+            ),
+            new Card(
+                "709f732e-5088-406e-bc5b-1fafdd51b155",
+                "https://tcg.pokemon.com/assets/img/expansions/fusion-strike/cards/en-us/SWSH08_EN_251-2x.jpg"
+            ),
         ]
     }
 }
