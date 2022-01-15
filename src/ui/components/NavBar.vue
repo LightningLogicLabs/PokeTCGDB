@@ -36,7 +36,7 @@
                 <div>
                     <button type="button" class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="{{ user.profileImage }}" alt="">
+                    <img class="h-8 w-8 rounded-full" v-bind:src="user.profileImage" alt="">
                     </button>
                 </div>
             </div>
@@ -45,7 +45,7 @@
     </div>
     <div class="sm:hidden" id="mobile-menu">
         <div class="px-2 pt-2 pb-3 space-y-1">
-        <a href="#" class="bg-gray-500 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Card Database</a>
+        <a href="#" class="bg-gray-500 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Search</a>
         </div>
     </div>
     </nav>
@@ -54,7 +54,9 @@
 <script>
 export default {
     name: 'NavBar',
-    inject: ['user']
+    props: {
+        user: Object
+    }
 }
 </script>
 

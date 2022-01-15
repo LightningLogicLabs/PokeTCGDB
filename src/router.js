@@ -8,12 +8,13 @@ const routes = [
     { 
         path: '/', 
         name: "searchPage",
-        component: SearchPage 
+        component: SearchPage
     },
     {
-        path: '/card/:cardId',
+        path: '/card/:id',
         name: "cardDetailPage",
-        component: CardDetailPage
+        component: CardDetailPage,
+        props: true
     },
     {
         path: "/:catchAll(.*)",

@@ -1,9 +1,9 @@
 <template>
     <div class="flex">
       <FilterMenu ref="filterMenu" v-bind:filterOptions="filterOptions"/>
-      <div class="m-auto max-w-7xl px-5 mb-10 flex flex-col min-h-screen">
+      <div class="mb-10 flex flex-col">
         <div class="flex">
-          <button v-on:click="toggleFilterMenu()" class="mt-10 mr-5 bg-gray-500 rounded-md text-white font-medium py-2 px-4 right">Filters</button>
+          <button v-on:click="openFilterMenu()" class="mt-10 mr-5 bg-gray-500 rounded-md text-white font-medium py-2 px-4 right">Filters</button>
           <SearchBar class="grow"/>
         </div>
         <NoResults v-show="searchResults.length == 0"/>
@@ -37,14 +37,14 @@ export default {
   },
   inject: ['filterOptions'],
   methods: {
-    toggleFilterMenu
+    openFilterMenu
   },
   mounted: function () {
     this.searchResults = searchRepository.search()
   }
 }
 
-function toggleFilterMenu() {
+function openFilterMenu() {
   this.$refs.filterMenu.open()
 }
 </script>

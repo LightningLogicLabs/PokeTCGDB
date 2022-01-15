@@ -7,14 +7,14 @@ class AxiosClient {
     }
 
     getCatFact() {
-        this.axiosInstance.get("/fact").then((response) => {
+        this.axiosInstance.get("/someEndPoint").then((response) => {
             console.log(response.data.fact)
         })
     }
 }
 
 const axiosInstance = axios.create({
-    baseURL: 'https://catfact.ninja',
+    baseURL: 'https://someAPI.com',
     timeout: 1000
 })
 

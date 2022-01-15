@@ -1,6 +1,6 @@
 <template>
     <NavBar v-bind:user="user"/>
-    <RouterView/>
+    <RouterView class="m-auto max-w-7xl px-10 flex-1 w-full"/>
     <SiteFooter/>
 </template>
 
@@ -19,12 +19,7 @@ export default {
     data () {
         return {
             user: {},
-            filterOptions: {
-                cardTypes: [],
-                energyTypes: [],
-                rarities: [],
-                sets: []
-            },
+            filterOptions: {},
             cardDetailsToView: {}
         }
     }, 
